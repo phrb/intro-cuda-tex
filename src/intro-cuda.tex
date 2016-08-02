@@ -9,12 +9,13 @@
 \usepackage[scale=2]{ccicons}
 \usepackage{url}
 \usepackage{relsize}
+\usepackage{wasysym}
 
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
 
 \lstset{ %
-  backgroundcolor=\color{white},
+  backgroundcolor={},
   basicstyle=\ttfamily\footnotesize,
   breakatwhitespace=true,
   breaklines=true,
@@ -43,16 +44,16 @@
 
 \renewcommand*{\UrlFont}{\ttfamily\smaller\relax}
 
-\graphicspath{{./img/}}
+\graphicspath{{../img/}}
 
-\title{Introdução à Programação de GPUs \\ com a Plataforma CUDA (Parte I)}
+\title{Introdução à Programação de GPUs \\ com a Plataforma CUDA}
 \author{\footnotesize Pedro Bruel \\ {\scriptsize phrb@ime.usp.br}}
 \institute{\includegraphics[height=2cm]{imelogo}\\[0.2cm] Instituto de Matemática e Estatística \\ Universidade de São Paulo}
 \date{\scriptsize 04 de Agosto de 2016}
 
 \begin{document}
 
-\section{Introdução}
+\section{Introdução - Parte I}
 
 \maketitle
 
@@ -106,17 +107,10 @@
 \subsection{Roteiro}
 
 \begin{frame}
-    \frametitle{Parte I}
+    \frametitle{Roteiro}
+    \scriptsize
     \setbeamertemplate{section in toc}[sections numbered]
     \tableofcontents[hideallsubsections]
-\end{frame}
-
-\begin{frame}
-    \frametitle{Parte II}
-    \begin{enumerate}
-        \item Introdução
-        \item Ferramentas
-    \end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -124,8 +118,7 @@
     \begin{center}
         \includegraphics[width=.18\textwidth]{github}
     \end{center}
-    Os \emph{pdf}s com as aulas e todo o código fonte usado nos exemplos estão
-    no \alert{GitHub}:
+    Os \emph{pdf}s com as aulas e todo o código fonte estão no \alert{GitHub}:
 
     \begin{itemize}
         \item \url{github.com/phrb/intro-cuda}
@@ -143,15 +136,15 @@
         \includegraphics[width=.6\textwidth]{accelerate}
     \end{center}
 
-    Uso de \alert{dispositivos} (devices) para acelerar computações aplicadas a
-    grandes conjuntos de dados:
+    Uso de \alert{dispositivos} (\textit{devices}) para acelerar computações
+    aplicadas a grandes conjuntos de dados:
     \pause
     \begin{itemize}
-        \item Associação a um processador \alert{hospedeiro} (host)
+        \item Associação a um processador \alert{hospedeiro} (\textit{host})
             \pause
-        \item Controle e memória próprios
+        \item \alert{Controle} e \alert{memória} próprios
             \pause
-        \item Diferem em especialização e configurabilidade
+        \item Diferem em \alert{especialização} e \alert{configurabilidade}
             \pause
         \item \alert{GPUs}, DSPs, FPGAs, ASICs
     \end{itemize}
@@ -182,10 +175,10 @@
     Porcentagem de sistemas com aceleradores na \textit{Top500}:
 
     \begin{center}
-    \includegraphics[width=.85\textwidth]{top500_accel}
+    \includegraphics[width=.95\textwidth]{top500_accel}
     \hfill
 
-    \tiny{Imagem: \url{cnet.com/pictures/top500-supercomputing-trends-visualized-pictures} [Acessado em 29/07/16]}
+        \tiny{Imagem: \url{top500.org/lists/2016/06/download/TOP500_201606_Poster.pdf} [Acessado em 29/07/16]}
     \end{center}
 \end{frame}
 
@@ -194,7 +187,7 @@
 \begin{frame}
     \frametitle{Computação Heterogênea}
     \begin{center}
-        \includegraphics[width=.7\textwidth]{titan}
+        \includegraphics[width=.83\textwidth]{titan}
     \end{center}
 
     Dados recursos computacionais \alert{heterogêneos}, conjuntos de
@@ -212,8 +205,11 @@
     Recursos computacionais \alert{heterogêneos}:
     \begin{itemize}
         \item Baixa latência: CPUs
+            \pause
         \item Alta vazão: GPUs
+            \pause
         \item Reconfiguráveis: FPGAs
+            \pause
         \item Especializados: ASICs, DSPs
             \pause
         \item Memória?
@@ -494,7 +490,7 @@
 \begin{frame}
     \frametitle{Bibliotecas}
     \centering
-    \includegraphics[width=.9\textwidth]{accel_libs}
+    \includegraphics[width=.9\textwidth]{accel_libs_no}
     \vfill
 
     \tiny{Imagem: \url{developer.nvidia.com/gpu-accelerated-libraries} [Acessado em 29/07/16]}
@@ -962,9 +958,7 @@ Db.x * Db.y * Db.z = threadsPerBlock
 
 \begin{frame}
     \frametitle{Recursos}
-
-    Os \emph{pdf}s com as aulas e todo o código fonte usado nos exemplos estão
-    no \alert{GitHub}:
+    Os \emph{pdf}s com as aulas e todo o código fonte estão no \alert{GitHub}:
 
     \begin{itemize}
         \item \url{github.com/phrb/intro-cuda}
@@ -982,6 +976,512 @@ Db.x * Db.y * Db.z = threadsPerBlock
         \item GPU Teaching Kit: \url{syllabus.gputeachingkit.com}
         \item iPython: \url{ipython.org/notebook.html}
         \item Anaconda: \url{continuum.io/downloads}
+    \end{itemize}
+\end{frame}
+
+\section{Introdução - Parte II}
+
+\maketitle
+
+\subsection{Sobre}
+
+\begin{frame}
+    \frametitle{Sobre}
+    \begin{columns}[T,onlytextwidth]
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=.45\textwidth]{pedro}
+
+            Pedro Bruel
+        \end{center}
+
+        \begin{itemize}
+            \item \alert{phrb}@ime.usp.br
+            \item \url{www.ime.usp.br/~phrb}
+            \item \url{github.com/phrb}
+        \end{itemize}
+
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=.4\textwidth]{alfredo}
+
+            Alfredo Goldman
+        \end{center}
+
+        \begin{itemize}
+            \item \alert{gold}@ime.usp.br
+            \item \url{www.ime.usp.br/~gold}
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pesquisa}
+    Meus interesses de \alert{pesquisa}:
+    \begin{itemize}
+        \item \textit{Autotuning}
+        \item \textit{Stochastic Local Search}
+        \item \textit{Model Based Search}
+        \item GPUs, FPGAs, \textit{cloud}
+        \item Julia Language
+        \item Colaboração! (\alert{phrb@ime.usp.br})
+    \end{itemize}
+\end{frame}
+
+\subsection{Roteiro}
+
+\begin{frame}
+    \frametitle{Roteiro}
+    \scriptsize
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Slides}
+    \begin{center}
+        \includegraphics[width=.18\textwidth]{github}
+    \end{center}
+    Os \emph{pdf}s com as aulas e todo o código fonte estão no \alert{GitHub}:
+
+    \begin{itemize}
+        \item \url{github.com/phrb/intro-cuda}
+    \end{itemize}
+\end{frame}
+
+\subsection{Relembrando}
+
+\begin{frame}
+    \frametitle{Aceleração por \textit{Hardware}}
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{accelerate}
+    \end{center}
+
+    Uso de \alert{dispositivos} (devices) para acelerar computações aplicadas a
+    grandes conjuntos de dados:
+
+    \begin{itemize}
+        \item Associação a um processador \alert{hospedeiro} (host)
+        \item Controle e memória próprios
+        \item Diferem em especialização e configurabilidade
+        \item \alert{GPUs}, DSPs, FPGAs, ASICs
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Aceleração por \textit{Hardware}}
+    \centering
+    \includegraphics[width=.8\textwidth]{accel}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Computação Heterogênea}
+    \begin{center}
+        \includegraphics[width=.7\textwidth]{titan}
+    \end{center}
+
+    Dados recursos computacionais \alert{heterogêneos}, conjuntos de
+    \alert{dados} e \alert{computações}, como distribuir computações e dados de
+    forma a \alert{otimizar o uso} dos recursos?
+    \hfill
+
+    \begin{center}
+    \tiny{Imagem: \url{olcf.ornl.gov/titan} [Acessado em 29/07/16]}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Graphics Processing Units}
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{gtx1080}
+    \end{center}
+
+    Originalmente especializadas em \alert{processamento gráfico},
+    trabalham com muitos dados e têm \alert{alta vazão}:
+    \begin{itemize}
+        \item Caches pequenos (\textit{kilobytes})
+        \item Sem \alert{branch prediction}
+        \item \alert{Milhares} de ALUs de \alert{maior latência}
+        \item \alert{Pipelines} de execução
+        \item 114 688 \alert{threads} concorrentes na arquitetura Pascal
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Plataforma CUDA}
+    \begin{center}
+        \includegraphics[width=.4\textwidth]{cuda-logo}
+    \end{center}
+    \begin{itemize}
+        \item Plataforma para \alert{computação paralela}
+        \item \textit{Application Programming Interface} (API)
+        \item CUDA \textit{Toolkit}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linguagens de Programação}
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{accel_apps_lang}
+    \end{center}
+    \begin{itemize}
+        \item Melhor desempenho, mas mais difíceis de usar
+        \item Flexíveis
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CUDA C}
+    \begin{center}
+        \includegraphics[width=.3\textwidth]{cuda-c}
+    \end{center}
+    Modelo de Programação:
+    \begin{itemize}
+        \item \alert{Kernels}
+        \item Hierarquia de \alert{Threads}
+        \item Hierarquia de \alert{Memória}
+        \item Programação \alert{Heterogênea}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Exemplo: Adição de Vetores}
+    \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+    #include <cuda_runtime.h>
+
+    float *h_A = (float *) malloc(size);
+    if (h_A == NULL) { ... };
+
+    float *d_A = NULL;
+    err = cudaMalloc((void **) &d_A, size);
+    err = cudaMemcpy(d_A, h_A, size, cudaMemcpyHostToDevice);
+    if (err != cudaSuccess) { ... };
+
+    int threadsPerBlock = 256;
+    int blocksPerGrid = (numElements + threadsPerBlock - 1) / threadsPerBlock;
+
+    vectorAdd<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, numElements);
+
+    err = cudaGetLastError()
+    err = cudaDeviceSynchronize()
+    if (err != cudaSuccess) { ... };
+
+    err = cudaMemcpy(h_C, d_C, size, cudaMemcpyDeviceToHost);
+    err = cudaFree(d_A);
+    if (err != cudaSuccess) { ... };
+    \end{lstlisting}
+
+    \vfill
+
+    \begin{center}
+        \tiny{Fonte: \url{github.com/phrb/intro-cuda} [Acessado em 29/07/16]}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mão na massa!}
+    Vamos executar alguns exemplos em CUDA C,
+    disponíveis em \url{github.com/phrb/intro-cuda}:
+    \begin{itemize}
+        \item \url{src/cuda-samples/0_Simple}
+        \item \url{src/cuda-samples/0_Simple/vectorAdd}
+        \item \url{src/cuda-samples/5_Simulations/fluidsGL}
+        \item \url{src/cuda-samples/5_Simulations/oceanFFT}
+        \item \url{src/cuda-samples/5_Simulations/smokeParticles}
+        \item \url{src/mandelbrot_numba}
+    \end{itemize}
+\end{frame}
+
+\section{Compilação de Aplicações CUDA}
+
+\subsection{Nvidia CUDA Compiler}
+
+\begin{frame}
+    \frametitle{Nvidia CUDA Compiler (\texttt{nvcc})}
+    \begin{center}
+        \includegraphics[width=.55\textwidth]{compiler}
+    \end{center}
+    \pause
+    \begin{itemize}
+        \item Sistema \alert{proprietário}
+            \pause
+        \item Usa o compilador C++ do \textit{host}
+            \pause
+        \item Compila código CUDA para \textit{Parallel Thread Execution} (\alert{PTX} ISA)
+            \pause
+        \item Código do \textit{host} + Código do \textit{device} $\rightarrow$ \alert{fatbinary}
+    \end{itemize}
+\end{frame}
+
+\subsection{Modelo de Programação}
+
+\begin{frame}
+    \frametitle{\texttt{nvcc}: Modelo de programação CUDA}
+    \begin{itemize}
+        \item SIMD, SIMT
+        \item \textit{Single Program Multiple Data} (SPMD)
+            \pause
+        \item \textit{Device}: \alert{threads} paralelas e \alert{independentes}
+        \item \textit{Host}: não interfere
+    \end{itemize}
+\end{frame}
+
+\subsection{Trajetória de Compilação}
+
+\begin{frame}
+    \frametitle{\texttt{nvcc}: Trajetória de Compilação}
+    \centering
+    \includegraphics[width=.7\textwidth]{cuda-compilation}
+    \vfill
+
+    \begin{center}
+        \tiny{Imagem: \url{docs.nvidia.com/cuda/cuda-compiler-driver-nvcc} [Acessado em 29/07/16]}
+    \end{center}
+\end{frame}
+
+\section{Boas Práticas em Otimização}
+
+\subsection{Measure, Parallelize, Optimize, Deploy}
+
+\begin{frame}
+    \frametitle{Measure, Parallelize, Optimize, Deploy}
+    \centering
+    \includegraphics[width=.9\textwidth]{MPOD}
+\end{frame}
+
+\subsection{Measure}
+
+\begin{frame}
+    \frametitle{Measure}
+    \begin{center}
+    \includegraphics[width=.4\textwidth]{MPOD_M}
+    \end{center}
+    \vfill
+
+    \pause
+    Dado um \alert{programa sequencial}:
+    \begin{itemize}
+        \item Quais funções fazem o \alert{trabalho pesado} (\alert{gargalos})?
+            \pause
+        \item É possível \alert{paralelizá-las}?
+            \pause
+        \item Como o programa se comporta quando:
+            \begin{itemize}
+                \item O trabalho é divido entre mais processos? (\alert{strong scaling})
+                    \pause
+                \item Há mais trabalho a ser feito? (\alert{weak scaling})
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Parallelize}
+
+\begin{frame}
+    \frametitle{Parallelize}
+    \begin{center}
+    \includegraphics[width=.4\textwidth]{MPOD_P}
+    \vfill
+        \pause
+    \includegraphics[width=.6\textwidth]{accel_apps}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Parallelize}
+    \begin{center}
+    \includegraphics[width=.4\textwidth]{MPOD_P}
+    \vfill
+    \includegraphics[width=.5\textwidth]{accel_libs_no}
+    \end{center}
+\end{frame}
+
+\subsection{Optimze}
+
+\begin{frame}
+    \frametitle{Optimize}
+    \begin{center}
+    \includegraphics[width=.4\textwidth]{MPOD_O}
+    \end{center}
+
+    \vfill
+
+    \pause
+    Otimização:
+    \begin{itemize}
+        \item Processo \alert{cíclico} \pause e \alert{incremental}
+            \pause
+        \item Aplicável a \alert{diferentes níveis}
+            \pause
+        \item \alert{Ferramentas} são muito importantes
+    \end{itemize}
+
+    \pause
+    \begin{center}
+    \alert{Eficiência com algoritmos}, \pause \alert{desempenho com estruturas de dados}
+    \end{center}
+\end{frame}
+
+\subsection{Deploy}
+
+\begin{frame}
+    \frametitle{Deploy}
+    \begin{center}
+    \includegraphics[width=.4\textwidth]{MPOD_D}
+    \end{center}
+
+    \vfill
+
+    \pause
+    \begin{itemize}
+        \item Preparar a aplicação para a \alert{medição}
+            \pause
+        \item Otimizações e mudanças \alert{incrementais}
+            \pause
+        \item O quanto ainda é \alert{possível} otimizar?
+    \end{itemize}
+\end{frame}
+
+\section{Análise e Otimização de Aplicações CUDA}
+
+\subsection{Análise de Aplicações CUDA}
+
+\begin{frame}
+    \frametitle{Análise de Aplicações CUDA}
+    Computação \alert{paralela} e \alert{distribuída} é cada vez mais
+    importante, mas \alert{código legado}:
+    \pause
+    \begin{itemize}
+        \item \alert{Sequencial}
+            \pause
+        \item Paralelismo de \alert{baixa granularidade}
+    \end{itemize}
+    \pause
+
+    Análise ou \alert{profiling}:
+    \pause
+    \begin{itemize}
+        \item Quais são os \alert{hotspots} (gargalos)
+            \pause
+        \item Podem ser paralelizados?
+            \pause
+        \item Quais \alert{workloads} são relevantes?
+    \end{itemize}
+\end{frame}
+
+\subsection{Computação Heterogênea: GPUs}
+
+\begin{frame}
+    \frametitle{Computação Heterogênea: \textit{host} e \textit{device}}
+    Diferenças entre \textit{host} e \textit{device}:
+    \begin{itemize}
+        \item Modelo de \textit{threading}
+            \pause
+        \item Memória
+    \end{itemize}
+
+    \pause
+    O que executar em \alert{GPUs}?
+    \pause
+    \begin{itemize}
+        \item Grande quantidade de \alert{dados}
+            \pause
+        \item Operações \alert{independentes}
+    \end{itemize}
+    \pause
+
+    Qual o impacto das \alert{transferências de dados}?
+\end{frame}
+
+\subsection{Profiling}
+
+\begin{frame}
+    \frametitle{\textit{Profiling}}
+    Monitoramento de código \alert{em tempo de execução},
+    obtendo informação para \alert{otimizar o código}
+    \pause
+
+    \alert{Instrumentação} do Código:
+    \begin{itemize}
+        \item Captura de \alert{eventos}
+            \pause
+        \item Geração de \alert{dados}
+            \pause
+        \item Ferramentas
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textit{Profiling: Flamegraphs}}
+    \begin{center}
+        \includegraphics[width=\textwidth]{flamegraph}
+    \end{center}
+
+    Facilitam a análise de:
+    \begin{itemize}
+        \item \textit{Bottlenecks}, \textit{hotspots}, ou \textit{gargalos} de desempenho
+            \pause
+        \item Frequência e duração de \alert{chamadas de função}: \textit{On-CPU}
+            \pause
+        \item Tempo \alert{ocioso}: \textit{Off-CPU}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Profiling: \texttt{nvprof}}
+    \textit{Profiler} de \alert{linha de comando},
+    permite a coleta de eventos relacionados a CUDA:
+    \pause
+    \begin{itemize}
+        \item CPU e GPU
+            \pause
+        \item Execução do \textit{kernel}
+            \pause
+        \item Uso e transferência de memória
+            \pause
+        \item CUDA API
+            \pause
+        \item Posterior visualização
+    \end{itemize}
+
+    \begin{center}
+        \tiny{Fonte: \url{docs.nvidia.com/cuda/profiler-users-guide} [Acessado em 29/07/16]}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{profiling: \texttt{nvvp}}
+    \centering
+    \includegraphics[width=\textwidth]{nvvp}
+
+    \vfill
+    \tiny{fonte: \url{docs.nvidia.com/cuda/profiler-users-guide} [acessado em 29/07/16]}
+\end{frame}
+
+\subsection{Otimização de Aplicações CUDA}
+
+\section{Encontrando Erros em Applicações CUDA}
+
+\subsection{Debuggers}
+
+\begin{frame}
+    \frametitle{\textit{Debuggers}}
+    \textit{Debuggers}:
+    \begin{itemize}
+        \item Ferramentas para análise de código \alert{em tempo de execução}
+        \item As intenções são \alert{consertar bugs} e realizar \alert{testes}
+    \end{itemize}
+    \pause
+    Como?
+    \begin{itemize}
+        \item Instrumentação do Código
+        \item Execução passo-a-passo
+        \item \alert{Breakpoints}
+    \end{itemize}
+    \pause
+    O quê?
+    \begin{itemize}
+        \item Acessos e vazamentos de memória
+        \item Pode ajudar com vários tipos de \alert{bugs} \smiley{}
     \end{itemize}
 \end{frame}
 

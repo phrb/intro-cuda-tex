@@ -4,8 +4,8 @@ DOC_DIR = $(TEXMFHOME)/doc/latex/mtheme
 TEMP_DIR = .temptex
 
 INS = mtheme.ins
-PRES_SRC = aula2_stub.tex
-PRES_PDF = aula2_stub.pdf
+PRES_SRC = intro-cuda.tex
+PRES_PDF = intro-cuda.pdf
 DOC_SRC = mtheme.dtx
 DOC_PDF = mtheme.pdf
 DTX = $(wildcard *.dtx)

@@ -15,7 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="scalability.svg">
+   sodipodi:docname="portability.svg"
+   inkscape:export-filename="/home/phrb/Dropbox/intro-cuda-tex/img/portability.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -26,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="891.55713"
-     inkscape:cy="326.05071"
+     inkscape:cx="930.68299"
+     inkscape:cy="557.88137"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -66,42 +69,40 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="736.78571"
-       y="328.41379"
+       x="737.84674"
+       y="327.33377"
        id="text4686"
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan4688"
-         x="736.78571"
-         y="328.41379"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">Application</tspan></text>
-    <g
-       id="g4755"
-       transform="translate(0,-8)"
+         x="737.84674"
+         y="327.33377"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans'">Application</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7.00000048;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4684-4"
+       width="569.72614"
+       height="252.53813"
+       x="56.568546"
+       y="442.72702"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <rect
-         y="450.72702"
-         x="56.568546"
-         height="252.53813"
-         width="569.72614"
-         id="rect4684-4"
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7.00000048;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4686-6"
-         y="608.22607"
-         x="132.43967"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-           y="608.22607"
-           x="132.43967"
-           id="tspan4688-2"
-           sodipodi:role="line">Core A 1.0</tspan></text>
-    </g>
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="208.67599"
+       y="600.0011"
+       id="text4686-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4688-2"
+         x="208.67599"
+         y="600.0011"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans'">Core A</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7.00000048;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4684-4-4"
@@ -114,41 +115,39 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="757.72406"
-       y="600.22607"
+       x="834.14038"
+       y="600.0011"
        id="text4686-6-0"
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan4688-2-6"
-         x="757.72406"
-         y="600.22607"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">Core A 2.0</tspan></text>
-    <g
-       transform="translate(1250.5688,-8)"
-       id="g4755-29"
+         x="834.14038"
+         y="600.0011"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans'">Core B</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7.00000048;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4684-4-9"
+       width="569.72614"
+       height="252.53813"
+       x="1307.1373"
+       y="442.72702"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <rect
-         y="450.72702"
-         x="56.568546"
-         height="252.53813"
-         width="569.72614"
-         id="rect4684-4-9"
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7.00000048;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4686-6-08"
-         y="608.22607"
-         x="132.43967"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-           y="608.22607"
-           x="132.43967"
-           id="tspan4688-2-1"
-           sodipodi:role="line">Core A 1.0</tspan></text>
-    </g>
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1460.4597"
+       y="600.0011"
+       id="text4686-6-08"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4688-2-1"
+         x="1460.4597"
+         y="600.0011"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans'">Core C</tspan></text>
   </g>
 </svg>

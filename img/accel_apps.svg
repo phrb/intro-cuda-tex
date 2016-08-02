@@ -25,11 +25,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="649.83323"
-     inkscape:cy="616.69376"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="745.48922"
+     inkscape:cy="499.9462"
      inkscape:document-units="px"
-     inkscape:current-layer="g4162-6"
+     inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
@@ -54,86 +54,80 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,27.637839)">
-    <g
-       id="g4162"
-       transform="translate(0,144)"
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4684"
+       width="1820.2949"
+       height="155.56349"
+       x="56.568546"
+       y="196.52435"
        inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300">
-      <rect
-         inkscape:export-ydpi="300"
-         inkscape:export-xdpi="300"
-         y="52.524353"
-         x="56.568546"
-         height="155.56349"
-         width="1820.2949"
-         id="rect4684"
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         inkscape:export-ydpi="300"
-         inkscape:export-xdpi="300"
-         sodipodi:linespacing="125%"
-         id="text4686"
-         y="156.90109"
-         x="635.65875"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-           y="156.90109"
-           x="635.65875"
-           id="tspan4688"
-           sodipodi:role="line">GPU Application</tspan></text>
-    </g>
+       inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="175.92212"
-       y="546.52185"
+       x="639.40149"
+       y="299.82111"
+       id="text4686"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4688"
+         x="639.40149"
+         y="299.82111"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans'">GPU Application</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="172.67297"
+       y="546.70184"
        id="text4686-6"
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan4688-2"
-         x="175.92212"
-         y="546.52185"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">Libraries</tspan></text>
+         x="172.67297"
+         y="546.70184"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans'">Libraries</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="964.57007"
-       y="490.27185"
+       x="963.78186"
+       y="490.45187"
        id="text4686-6-0"
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
-         x="964.57007"
-         y="490.27185"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
+         x="963.78186"
+         y="490.45187"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';text-align:center;text-anchor:middle"
          id="tspan4145">Compiler</tspan><tspan
          sodipodi:role="line"
-         x="964.57007"
-         y="602.77185"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
+         x="963.78186"
+         y="602.95184"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';text-align:center;text-anchor:middle"
          id="tspan4149">Directives</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="1578.8789"
-       y="480.55188"
+       x="1574.6222"
+       y="481.40686"
        id="text4686-6-08"
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan4688-2-1"
-         x="1578.8789"
-         y="480.55188"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle">Programming</tspan><tspan
+         x="1574.6222"
+         y="481.40686"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';text-align:center;text-anchor:middle">Programming</tspan><tspan
          sodipodi:role="line"
-         x="1578.8789"
-         y="593.05188"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
+         x="1574.6222"
+         y="593.90686"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans';text-align:center;text-anchor:middle"
          id="tspan4151">Languages</tspan></text>
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7.00000048;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -162,32 +156,28 @@
        y="366.72705"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
-    <g
-       transform="translate(0,475.32497)"
-       id="g4162-6">
-      <rect
-         inkscape:export-ydpi="300"
-         inkscape:export-xdpi="300"
-         y="196.52435"
-         x="56.568546"
-         height="155.56349"
-         width="1820.2949"
-         id="rect4684-7"
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         inkscape:export-ydpi="300"
-         inkscape:export-xdpi="300"
-         sodipodi:linespacing="125%"
-         id="text4686-5"
-         y="305.5361"
-         x="879.22266"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-           y="305.5361"
-           x="879.22266"
-           id="tspan4688-3"
-           sodipodi:role="line">GPU</tspan></text>
-    </g>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4684-7"
+       width="1820.2949"
+       height="155.56349"
+       x="56.568546"
+       y="671.8493"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="884.00885"
+       y="780.63605"
+       id="text4686-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4688-3"
+         x="884.00885"
+         y="780.63605"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans'">GPU</tspan></text>
   </g>
 </svg>
