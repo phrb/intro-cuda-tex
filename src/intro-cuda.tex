@@ -53,9 +53,11 @@
 
 \begin{document}
 
-\section{Introdução - Parte I}
+\part{Parte I}
 
 \maketitle
+
+\section{Introdução}
 
 \subsection{Sobre}
 
@@ -107,10 +109,15 @@
 \subsection{Roteiro}
 
 \begin{frame}
-    \frametitle{Roteiro}
-    \scriptsize
+    \frametitle{Parte I}
     \setbeamertemplate{section in toc}[sections numbered]
-    \tableofcontents[hideallsubsections]
+    \tableofcontents[hideallsubsections, part=1]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Parte II}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections, part=2]
 \end{frame}
 
 \begin{frame}
@@ -118,7 +125,7 @@
     \begin{center}
         \includegraphics[width=.18\textwidth]{github}
     \end{center}
-    Os \emph{pdf}s com as aulas e todo o código fonte estão no \alert{GitHub}:
+    O \emph{pdf} com as aulas e todo o código fonte estão no \alert{GitHub}:
 
     \begin{itemize}
         \item \url{github.com/phrb/intro-cuda}
@@ -190,6 +197,8 @@
         \includegraphics[width=.83\textwidth]{titan}
     \end{center}
 
+    \pause
+
     Dados recursos computacionais \alert{heterogêneos}, conjuntos de
     \alert{dados} e \alert{computações}, como distribuir computações e dados de
     forma a \alert{otimizar o uso} dos recursos?
@@ -203,6 +212,7 @@
 \begin{frame}
     \frametitle{Computação Heterogênea}
     Recursos computacionais \alert{heterogêneos}:
+    \pause
     \begin{itemize}
         \item Baixa latência: CPUs
             \pause
@@ -286,9 +296,12 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{gtx1080}
     \end{center}
+    \pause
 
     Originalmente especializadas em \alert{processamento gráfico},
     trabalham com muitos dados e têm \alert{alta vazão}:
+    \pause
+
     \begin{itemize}
         \item Caches pequenos (\textit{kilobytes})
             \pause
@@ -304,8 +317,9 @@
 
 \begin{frame}
     \frametitle{Graphics Processing Units}
-    Hoje são usados em computação de propósito geral, podem ser chamados de
+    Hoje são usadas em computação de propósito geral, podem ser chamadas de
     \textit{General Purpose GPUs} (GPGPUs):
+    \pause
     \begin{itemize}
         \item \textit{OpenGL}: 1992
         \item \textit{DirectX}: 1995
@@ -363,9 +377,10 @@
     \frametitle{\textit{Compute Capability} e SIMT}
     A \alert{Compute Capability} especifica características de
     arquiteturas \textit{Single Instruction Multiple Thread} (SIMT):
+    \pause
     \begin{itemize}
         \item \textit{Warp}: Grupo de \textit{threads} executadas em \alert{paralelo}
-        \item SM: Cria, escalona e executa \textit{warps}
+        \item \textit{Streaming Multiprocessor} (SM): Cria, escalona e executa \textit{warps}
             \pause
         \item Múltiplas \textit{warps} \alert{concorrentes} no mesmo SM
     \end{itemize}
@@ -379,6 +394,7 @@
 \begin{frame}
     \frametitle{\textit{Compute Capability} e SIMT}
     \textit{Warps}:
+    \pause
     \begin{itemize}
         \item Unidade de execução e escalonamento
         \item 32 \textit{threads}
@@ -456,6 +472,8 @@
     \begin{center}
         \includegraphics[width=.4\textwidth]{cuda-logo}
     \end{center}
+    \pause
+
     \begin{itemize}
         \item Plataforma para \alert{computação paralela}
         \item \textit{Application Programming Interface} (API)
@@ -478,6 +496,8 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{accel_apps_lib}
     \end{center}
+    \pause
+
     \begin{itemize}
         \item Fáceis de usar
             \pause
@@ -523,6 +543,8 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{accel_apps_comp}
     \end{center}
+    \pause
+
     \begin{itemize}
         \item Fáceis de usar
             \pause
@@ -554,6 +576,8 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{accel_apps_lang}
     \end{center}
+    \pause
+
     \begin{itemize}
         \item Melhor desempenho, mas mais difíceis de usar
             \pause
@@ -580,7 +604,10 @@
     \begin{center}
         \includegraphics[width=.3\textwidth]{cuda-c}
     \end{center}
+
+    \pause
     Modelo de Programação:
+    \pause
     \begin{itemize}
         \item \alert{Kernels}
             \pause
@@ -918,18 +945,16 @@ Db.x * Db.y * Db.z = threadsPerBlock
     float *d_A = NULL;
     err = cudaMalloc((void **) &d_A, size);
 
+    err = cudaGetLastError()
+
+    err = cudaDeviceSynchronize()
+    \end{lstlisting}
+    \pause
+    \begin{lstlisting}
     if (err != cudaSuccess) {
         fprintf(stderr, "Failed to allocate device vector A (error code %s)!\n", cudaGetErrorString(err));
         exit(EXIT_FAILURE);
     }
-    \end{lstlisting}
-    \pause
-    \begin{lstlisting}
-    err = cudaGetLastError()
-    if (err != cudaSuccess) { ... };
-
-    err = cudaDeviceSynchronize()
-    if (err != cudaSuccess) { ... };
     \end{lstlisting}
 
     \begin{center}
@@ -958,7 +983,7 @@ Db.x * Db.y * Db.z = threadsPerBlock
 
 \begin{frame}
     \frametitle{Recursos}
-    Os \emph{pdf}s com as aulas e todo o código fonte estão no \alert{GitHub}:
+    O \emph{pdf} com as aulas e todo o código fonte estão no \alert{GitHub}:
 
     \begin{itemize}
         \item \url{github.com/phrb/intro-cuda}
@@ -967,11 +992,11 @@ Db.x * Db.y * Db.z = threadsPerBlock
     Outros recursos:
 
     \begin{itemize}
-        \item CUDA C: \url{docs.nvidia.com/cuda/cuda-c-programming-guide/}
-        \item CUDA Toolkit:
+        \item CUDA C: \url{docs.nvidia.com/cuda/cuda-c-programming-guide}
+        \item CUDA Toolkit: \url{developer.nvidia.com/cuda-toolkit}
+        \item Guia de Boas Práticas:
             \begin{itemize}
-                \item \url{developer.nvidia.com/cuda-toolkit}
-                \item \url{developer.nvidia.com/cuda-toolkit}
+                \item \url{docs.nvidia.com/cuda/cuda-c-best-practices-guide}
             \end{itemize}
         \item GPU Teaching Kit: \url{syllabus.gputeachingkit.com}
         \item iPython: \url{ipython.org/notebook.html}
@@ -979,9 +1004,11 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \end{itemize}
 \end{frame}
 
-\section{Introdução - Parte II}
+\part{Parte II}
 
 \maketitle
+
+\section{Retomada}
 
 \subsection{Sobre}
 
@@ -1031,10 +1058,15 @@ Db.x * Db.y * Db.z = threadsPerBlock
 \subsection{Roteiro}
 
 \begin{frame}
-    \frametitle{Roteiro}
-    \scriptsize
+    \frametitle{Parte I}
     \setbeamertemplate{section in toc}[sections numbered]
-    \tableofcontents[hideallsubsections]
+    \tableofcontents[hideallsubsections, part=1]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Parte II}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections, part=2]
 \end{frame}
 
 \begin{frame}
@@ -1042,7 +1074,7 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \begin{center}
         \includegraphics[width=.18\textwidth]{github}
     \end{center}
-    Os \emph{pdf}s com as aulas e todo o código fonte estão no \alert{GitHub}:
+    O \emph{pdf} com as aulas e todo o código fonte estão no \alert{GitHub}:
 
     \begin{itemize}
         \item \url{github.com/phrb/intro-cuda}
@@ -1072,6 +1104,18 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \frametitle{Aceleração por \textit{Hardware}}
     \centering
     \includegraphics[width=.8\textwidth]{accel}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Aceleração por \textit{Hardware}}
+    Porcentagem de sistemas com aceleradores na \textit{Top500}:
+
+    \begin{center}
+    \includegraphics[width=.95\textwidth]{top500_accel}
+    \hfill
+
+        \tiny{Imagem: \url{top500.org/lists/2016/06/download/TOP500_201606_Poster.pdf} [Acessado em 29/07/16]}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -1183,13 +1227,35 @@ Db.x * Db.y * Db.z = threadsPerBlock
     Vamos executar alguns exemplos em CUDA C,
     disponíveis em \url{github.com/phrb/intro-cuda}:
     \begin{itemize}
-        \item \url{src/cuda-samples/0_Simple}
         \item \url{src/cuda-samples/0_Simple/vectorAdd}
         \item \url{src/cuda-samples/5_Simulations/fluidsGL}
         \item \url{src/cuda-samples/5_Simulations/oceanFFT}
         \item \url{src/cuda-samples/5_Simulations/smokeParticles}
         \item \url{src/mandelbrot_numba}
     \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Dica Prática}
+    \alert{Sempre} procure por erros!
+
+    \begin{lstlisting}
+    float *d_A = NULL;
+    err = cudaMalloc((void **) &d_A, size);
+
+    err = cudaGetLastError()
+
+    err = cudaDeviceSynchronize()
+
+    if (err != cudaSuccess) {
+        fprintf(stderr, "Failed to allocate device vector A (error code %s)!\n", cudaGetErrorString(err));
+        exit(EXIT_FAILURE);
+    }
+    \end{lstlisting}
+
+    \begin{center}
+        \tiny{Fonte: \url{github.com/phrb/intro-cuda} [Acessado em 29/07/16]}
+    \end{center}
 \end{frame}
 
 \section{Compilação de Aplicações CUDA}
@@ -1247,6 +1313,11 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \frametitle{Measure, Parallelize, Optimize, Deploy}
     \centering
     \includegraphics[width=.9\textwidth]{MPOD}
+    \vfill
+
+    \begin{center}
+        \tiny{Fonte: \url{docs.nvidia.com/cuda/cuda-c-best-practices-guide} [Acessado em 29/07/16]}
+    \end{center}
 \end{frame}
 
 \subsection{Measure}
@@ -1341,12 +1412,14 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \end{itemize}
 \end{frame}
 
-\section{Análise e Otimização de Aplicações CUDA}
-
-\subsection{Análise de Aplicações CUDA}
+\section{Análise de Aplicações CUDA}
 
 \begin{frame}
     \frametitle{Análise de Aplicações CUDA}
+    \begin{center}
+        \includegraphics[width=.2\textwidth]{data_profile}
+    \end{center}
+
     Computação \alert{paralela} e \alert{distribuída} é cada vez mais
     importante, mas \alert{código legado}:
     \pause
@@ -1360,7 +1433,7 @@ Db.x * Db.y * Db.z = threadsPerBlock
     Análise ou \alert{profiling}:
     \pause
     \begin{itemize}
-        \item Quais são os \alert{hotspots} (gargalos)
+        \item Quais são os \alert{hotspots} (\textit{gargalos}, \textit{bottlenecks})?
             \pause
         \item Podem ser paralelizados?
             \pause
@@ -1368,10 +1441,10 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \end{itemize}
 \end{frame}
 
-\subsection{Computação Heterogênea: GPUs}
+\subsection{Host e Device}
 
 \begin{frame}
-    \frametitle{Computação Heterogênea: \textit{host} e \textit{device}}
+    \frametitle{\textit{Host} e \textit{Device}}
     Diferenças entre \textit{host} e \textit{device}:
     \begin{itemize}
         \item Modelo de \textit{threading}
@@ -1422,7 +1495,7 @@ Db.x * Db.y * Db.z = threadsPerBlock
             \pause
         \item Frequência e duração de \alert{chamadas de função}: \textit{On-CPU}
             \pause
-        \item Tempo \alert{ocioso}: \textit{Off-CPU}
+        \item Tempo \alert{ocioso} (\textit{espera}): \textit{Off-CPU}
     \end{itemize}
 \end{frame}
 
@@ -1439,9 +1512,10 @@ Db.x * Db.y * Db.z = threadsPerBlock
         \item Uso e transferência de memória
             \pause
         \item CUDA API
-            \pause
-        \item Posterior visualização
     \end{itemize}
+    \pause
+
+    Gera dados para \alert{posterior visualização}
 
     \begin{center}
         \tiny{Fonte: \url{docs.nvidia.com/cuda/profiler-users-guide} [Acessado em 29/07/16]}
@@ -1449,39 +1523,212 @@ Db.x * Db.y * Db.z = threadsPerBlock
 \end{frame}
 
 \begin{frame}
-    \frametitle{profiling: \texttt{nvvp}}
+    \frametitle{Profiling: \texttt{nvvp}}
     \centering
     \includegraphics[width=\textwidth]{nvvp}
 
     \vfill
-    \tiny{fonte: \url{docs.nvidia.com/cuda/profiler-users-guide} [acessado em 29/07/16]}
+    \tiny{Fonte: \url{docs.nvidia.com/cuda/profiler-users-guide} [Acessado em 29/07/16]}
 \end{frame}
 
-\subsection{Otimização de Aplicações CUDA}
+\begin{frame}
+    \frametitle{Profiling: Ferramentas}
+    \centering
+    \includegraphics[width=.5\textwidth]{profile_tools}
 
-\section{Encontrando Erros em Applicações CUDA}
+    \vfill
+    \tiny{Fonte: \url{developer.nvidia.com/performance-analysis-tools} [Acessado em 29/07/16]}
+\end{frame}
 
-\subsection{Debuggers}
+\subsection{Debugging}
 
 \begin{frame}
-    \frametitle{\textit{Debuggers}}
-    \textit{Debuggers}:
-    \begin{itemize}
-        \item Ferramentas para análise de código \alert{em tempo de execução}
-        \item As intenções são \alert{consertar bugs} e realizar \alert{testes}
-    \end{itemize}
+    \frametitle{\textit{Debugging}}
+    Monitoramento de código \alert{em tempo de execução},
+    obtendo informação para \alert{consertar erros} (\alert{bugs})
     \pause
-    Como?
+
+    \alert{Instrumentação} do Código:
     \begin{itemize}
-        \item Instrumentação do Código
-        \item Execução passo-a-passo
+        \item Execução \alert{passo-a-passo}
+            \pause
         \item \alert{Breakpoints}
+            \pause
+        \item Diferentes \alert{threads}
+            \pause
+        \item CUDA \texttt{\alert{gdb}} e \texttt{\alert{memcheck}}
     \end{itemize}
     \pause
-    O quê?
+
+    Facilitam a solução de:
     \begin{itemize}
-        \item Acessos e vazamentos de memória
-        \item Pode ajudar com vários tipos de \alert{bugs} \smiley{}
+        \item \alert{Vazamentos} de memória
+            \pause
+        \item Problemas com \alert{fluxo de controle}
+            \pause
+        \item ...
+    \end{itemize}
+\end{frame}
+
+\section{Otimização de Aplicações CUDA}
+
+\begin{frame}
+    \frametitle{Otimização de Aplicações CUDA}
+    \begin{center}
+        \includegraphics[width=.2\textwidth]{optimization_icon}
+    \end{center}
+
+    Diferentes níveis de \alert{abstração} e \alert{prioridade}:
+    \pause
+    \begin{itemize}
+        \item Memória
+            \pause
+        \item Fluxo de controle
+            \pause
+        \item Configuração de execução
+            \pause
+        \item Instruções
+    \end{itemize}
+\end{frame}
+
+\subsection{Otimizações de Memória}
+
+\begin{frame}
+    \frametitle{Otimizações de Memória}
+    São as \alert{mais importantes} para atingir \alert{alto desempenho}
+    \pause
+
+    Objetivos:
+    \begin{itemize}
+        \item Maximizar \alert{largura de banda} (\textit{bandwidth})
+            \pause
+        \item Minimizar \alert{transferências} entre \textit{device} e \textit{host}
+            \pause
+    \end{itemize}
+
+    Boas práticas:
+    \pause
+
+    \begin{itemize}
+        \item No \textit{device}:
+            \pause
+            \begin{itemize}
+                \item Priorizar execução de \alert{computações}
+                    \pause
+                \item Criar e destruir \alert{estruturas de dados intermediárias}
+                    \pause
+                \item Accesos \alert{agrupados} (\textit{coalescentes}) à memória
+            \end{itemize}
+            \pause
+        \item No \textit{host}:
+            \pause
+            \begin{itemize}
+                \item Delegar execução de \alert{computações}
+                    \pause
+                \item Minimizar o número de \alert{transferências de dados}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Otimizações de Fluxo de Controle}
+
+\begin{frame}
+    \frametitle{Otimizações de Fluxo de Controle}
+    \alert{Alta prioridade} para atingir \alert{alto desempenho}
+    \pause
+
+    Objetivos:
+    \begin{itemize}
+        \item Evitar \alert{divergência de fluxo de controle} dentro de
+            \textit{warps}
+            \pause
+        \item \texttt{\alert{if}}, \texttt{\alert{switch}},
+            \texttt{\alert{do}}, \texttt{\alert{for}}, \texttt{\alert{while}}
+            \pause
+        \item Fazer bom uso do \texttt{\alert{threadIdx}}
+    \end{itemize}
+\end{frame}
+
+\subsection{Otimizações de Configuração de Execução}
+
+\begin{frame}
+    \frametitle{Otimizações de Configuração de Execução}
+    Como aproveitar totalmente o potencial do \alert{device}?
+    \pause
+    \begin{itemize}
+        \item Maximizar a \alert{ocupância}
+            \pause
+        \item Escolher bem os \alert{blocks} e \alert{threads}
+            \pause
+        \item Execução independente de \alert{kernels}
+    \end{itemize}
+\end{frame}
+
+\subsection{Otimizações de Instruções}
+
+\begin{frame}
+    \frametitle{Otimizações de Instruções}
+    \alert{Baixa prioridade} para atingir \alert{alto desempenho}:
+    \pause
+    \begin{itemize}
+        \item \alert{Baixo nível}
+            \pause
+        \item Aplicadas a \alert{hotspots}
+            \pause
+        \item Feitas por \alert{experts}
+        \item Após \alert{exaurir} outras possibilidades de otimização
+            \pause
+        \item \lq\lq{}\alert{Escovar \textit{bits}}\rq\rq{} \smiley{}
+    \end{itemize}
+\end{frame}
+
+\section{Conclusão}
+
+\begin{frame}
+    \frametitle{Conclusão}
+    \centering
+        \includegraphics[width=.75\textwidth]{top500_accel}
+    \vfill
+
+    Atingir \alert{alto desempenho} através do uso de \alert{aceleradores} \pause (\alert{GPUs})
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusão}
+    \begin{center}
+        \includegraphics[width=.5\textwidth]{titan_x}
+    \end{center}
+    \vfill
+
+    \pause
+    Custo de \alert{implementação}, \alert{análise} e \alert{otimização}
+
+    \pause
+    \alert{Ferramentas} da plataforma \alert{CUDA}
+\end{frame}
+
+\subsection{Recursos}
+
+\begin{frame}
+    \frametitle{Recursos}
+    O \emph{pdf} com as aulas e todo o código fonte estão no \alert{GitHub}:
+
+    \begin{itemize}
+        \item \url{github.com/phrb/intro-cuda}
+    \end{itemize}
+
+    Outros recursos:
+
+    \begin{itemize}
+        \item CUDA C: \url{docs.nvidia.com/cuda/cuda-c-programming-guide}
+        \item CUDA Toolkit: \url{developer.nvidia.com/cuda-toolkit}
+        \item Guia de Boas Práticas:
+            \begin{itemize}
+                \item \url{docs.nvidia.com/cuda/cuda-c-best-practices-guide}
+            \end{itemize}
+        \item GPU Teaching Kit: \url{syllabus.gputeachingkit.com}
+        \item iPython: \url{ipython.org/notebook.html}
+        \item Anaconda: \url{continuum.io/downloads}
     \end{itemize}
 \end{frame}
 
