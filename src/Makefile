@@ -4,8 +4,10 @@ DOC_DIR = $(TEXMFHOME)/doc/latex/mtheme
 TEMP_DIR = .temptex
 
 INS = mtheme.ins
-PRES_SRC = intro-cuda.tex
-PRES_PDF = intro-cuda.pdf
+PRES_SRC_PT = intro-cuda-pt.tex
+PRES_PDF_PT = intro-cuda-pt.pdf
+PRES_SRC_EN = intro-cuda-en.tex
+PRES_PDF_EN = intro-cuda-en.pdf
 DOC_SRC = mtheme.dtx
 DOC_PDF = mtheme.pdf
 DTX = $(wildcard *.dtx)
@@ -25,9 +27,13 @@ all: sty doc autotuning-cloud
 $(STY): $(DTX) $(INS)
 	@latex $(INS)
 
-$(PRES_PDF): $(STY) $(PRES_SRC)
-	$(TEXC) $(PRES_SRC)
-	@cp $(TEMP_DIR)/$(PRES_PDF) .
+$(PRES_PDF_PT): $(STY) $(PRES_SRC_PT)
+	$(TEXC) $(PRES_SRC_PT)
+	@cp $(TEMP_DIR)/$(PRES_PDF_PT) .
+
+$(PRES_PDF_EN): $(STY) $(PRES_SRC_EN)
+	$(TEXC) $(PRES_SRC_EN)
+	@cp $(TEMP_DIR)/$(PRES_PDF_EN) .
 
 $(DOC_PDF): $(DOC_SRC) $(DTX)
 	@$(TEXC) $(DOC_SRC)
@@ -37,7 +43,9 @@ sty: $(STY)
 
 doc: $(DOC_PDF)
 
-slides: $(PRES_PDF)
+slides-pt: $(PRES_PDF_PT)
+
+slides-en: $(PRES_PDF_EN)
 
 ctan: $(CTAN_CONTENT)
 	@mkdir -p mtheme
