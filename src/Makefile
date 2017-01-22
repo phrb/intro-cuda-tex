@@ -8,6 +8,8 @@ PRES_SRC_PT = intro-cuda-pt.tex
 PRES_PDF_PT = intro-cuda-pt.pdf
 PRES_SRC_EN = intro-cuda-en.tex
 PRES_PDF_EN = intro-cuda-en.pdf
+SAMP_SRC_EN = intro-cuda-sample-en.tex
+SAMP_PDF_EN = intro-cuda-sample-en.pdf
 DOC_SRC = mtheme.dtx
 DOC_PDF = mtheme.pdf
 DTX = $(wildcard *.dtx)
@@ -35,6 +37,10 @@ $(PRES_PDF_EN): $(STY) $(PRES_SRC_EN)
 	$(TEXC) $(PRES_SRC_EN)
 	@cp $(TEMP_DIR)/$(PRES_PDF_EN) .
 
+$(SAMP_PDF_EN): $(STY) $(SAMP_SRC_EN)
+	$(TEXC) $(SAMP_SRC_EN)
+	@cp $(TEMP_DIR)/$(SAMP_PDF_EN) .
+
 $(DOC_PDF): $(DOC_SRC) $(DTX)
 	@$(TEXC) $(DOC_SRC)
 	@cp $(TEMP_DIR)/$(DOC_PDF) .
@@ -46,6 +52,8 @@ doc: $(DOC_PDF)
 slides-pt: $(PRES_PDF_PT)
 
 slides-en: $(PRES_PDF_EN)
+
+sample-slides-en: $(SAMP_PDF_EN)
 
 ctan: $(CTAN_CONTENT)
 	@mkdir -p mtheme
