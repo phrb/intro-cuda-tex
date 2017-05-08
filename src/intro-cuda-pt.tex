@@ -14,17 +14,26 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
 
+\definecolor{Base}{HTML}{191F26}
+\definecolor{Accent}{HTML}{157FFF}
+
+\setbeamercolor{alerted text}{fg=Accent}
+\setbeamercolor{frametitle}{bg=Base}
+
+\setsansfont[BoldFont={Source Sans Pro Semibold},
+              Numbers={OldStyle}]{Source Sans Pro}
+
 \lstset{ %
   backgroundcolor={},
   basicstyle=\ttfamily\footnotesize,
   breakatwhitespace=true,
   breaklines=true,
   captionpos=n,
-  commentstyle=\color{orange},
+  commentstyle=\color{Accent},
   escapeinside={\%*}{*)},
   extendedchars=true,
   frame=n,
-  keywordstyle=\color{orange},
+  keywordstyle=\color{Accent},
   language=C++,
   rulecolor=\color{black},
   showspaces=false,
@@ -49,7 +58,7 @@
 \title{Introdução à Programação de GPUs \\ com a Plataforma CUDA}
 \author{\footnotesize Pedro Bruel \\ {\scriptsize phrb@ime.usp.br}}
 \institute{\includegraphics[height=2cm]{imelogo}\\[0.2cm] Instituto de Matemática e Estatística \\ Universidade de São Paulo}
-\date{\scriptsize 04 de Agosto de 2016}
+\date{\scriptsize 09 de Maio de 2017}
 
 \begin{document}
 
@@ -59,52 +68,52 @@
 
 \section{Introdução}
 
-\subsection{Sobre}
+%\subsection{Sobre}
 
-\begin{frame}
-    \frametitle{Sobre}
-    \begin{columns}[T,onlytextwidth]
-        \column{0.5\textwidth}
-        \begin{center}
-            \includegraphics[width=.45\textwidth]{pedro}
-
-            Pedro Bruel
-        \end{center}
-
-        \begin{itemize}
-            \item \alert{phrb}@ime.usp.br
-            \item \url{www.ime.usp.br/~phrb}
-            \item \url{github.com/phrb}
-        \end{itemize}
-
-        \column{0.5\textwidth}
-        \begin{center}
-            \includegraphics[width=.4\textwidth]{alfredo}
-
-            Alfredo Goldman
-        \end{center}
-
-        \begin{itemize}
-            \item \alert{gold}@ime.usp.br
-            \item \url{www.ime.usp.br/~gold}
-        \end{itemize}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Pesquisa}
-    Meus interesses de \alert{pesquisa}:
-    \begin{itemize}
-        \item \textit{Autotuning}
-        \item \textit{Stochastic Local Search}
-        \item \textit{Model Based Search}
-            \pause
-        \item GPUs, FPGAs, \textit{cloud}
-        \item Julia Language
-            \pause
-        \item Colaboração! (\alert{phrb@ime.usp.br})
-    \end{itemize}
-\end{frame}
+%\begin{frame}
+%    \frametitle{Sobre}
+%    \begin{columns}[T,onlytextwidth]
+%        \column{0.5\textwidth}
+%        \begin{center}
+%            \includegraphics[width=.45\textwidth]{pedro}
+%
+%            Pedro Bruel
+%        \end{center}
+%
+%        \begin{itemize}
+%            \item \alert{phrb}@ime.usp.br
+%            \item \url{www.ime.usp.br/~phrb}
+%            \item \url{github.com/phrb}
+%        \end{itemize}
+%
+%        \column{0.5\textwidth}
+%        \begin{center}
+%            \includegraphics[width=.4\textwidth]{alfredo}
+%
+%            Alfredo Goldman
+%        \end{center}
+%
+%        \begin{itemize}
+%            \item \alert{gold}@ime.usp.br
+%            \item \url{www.ime.usp.br/~gold}
+%        \end{itemize}
+%    \end{columns}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Pesquisa}
+%    Meus interesses de \alert{pesquisa}:
+%    \begin{itemize}
+%        \item \textit{Autotuning}
+%        \item \textit{Stochastic Local Search}
+%        \item \textit{Model Based Search}
+%            \pause
+%        \item GPUs, FPGAs, \textit{cloud}
+%        \item Julia Language
+%            \pause
+%        \item Colaboração! (\alert{phrb@ime.usp.br})
+%    \end{itemize}
+%\end{frame}
 
 \subsection{Roteiro}
 
@@ -179,7 +188,7 @@
 
 \begin{frame}
     \frametitle{Aceleração por \textit{Hardware}}
-    Porcentagem de sistemas com aceleradores na \textit{Top500}:
+    Sistemas com aceleradores na \textit{Top500}:
 
     \begin{center}
     \includegraphics[width=.95\textwidth]{top500_accel}
@@ -1010,50 +1019,50 @@ Db.x * Db.y * Db.z = threadsPerBlock
 
 \section{Retomada}
 
-\subsection{Sobre}
-
-\begin{frame}
-    \frametitle{Sobre}
-    \begin{columns}[T,onlytextwidth]
-        \column{0.5\textwidth}
-        \begin{center}
-            \includegraphics[width=.45\textwidth]{pedro}
-
-            Pedro Bruel
-        \end{center}
-
-        \begin{itemize}
-            \item \alert{phrb}@ime.usp.br
-            \item \url{www.ime.usp.br/~phrb}
-            \item \url{github.com/phrb}
-        \end{itemize}
-
-        \column{0.5\textwidth}
-        \begin{center}
-            \includegraphics[width=.4\textwidth]{alfredo}
-
-            Alfredo Goldman
-        \end{center}
-
-        \begin{itemize}
-            \item \alert{gold}@ime.usp.br
-            \item \url{www.ime.usp.br/~gold}
-        \end{itemize}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Pesquisa}
-    Meus interesses de \alert{pesquisa}:
-    \begin{itemize}
-        \item \textit{Autotuning}
-        \item \textit{Stochastic Local Search}
-        \item \textit{Model Based Search}
-        \item GPUs, FPGAs, \textit{cloud}
-        \item Julia Language
-        \item Colaboração! (\alert{phrb@ime.usp.br})
-    \end{itemize}
-\end{frame}
+%\subsection{Sobre}
+%
+%\begin{frame}
+%    \frametitle{Sobre}
+%    \begin{columns}[T,onlytextwidth]
+%        \column{0.5\textwidth}
+%        \begin{center}
+%            \includegraphics[width=.45\textwidth]{pedro}
+%
+%            Pedro Bruel
+%        \end{center}
+%
+%        \begin{itemize}
+%            \item \alert{phrb}@ime.usp.br
+%            \item \url{www.ime.usp.br/~phrb}
+%            \item \url{github.com/phrb}
+%        \end{itemize}
+%
+%        \column{0.5\textwidth}
+%        \begin{center}
+%            \includegraphics[width=.4\textwidth]{alfredo}
+%
+%            Alfredo Goldman
+%        \end{center}
+%
+%        \begin{itemize}
+%            \item \alert{gold}@ime.usp.br
+%            \item \url{www.ime.usp.br/~gold}
+%        \end{itemize}
+%    \end{columns}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Pesquisa}
+%    Meus interesses de \alert{pesquisa}:
+%    \begin{itemize}
+%        \item \textit{Autotuning}
+%        \item \textit{Stochastic Local Search}
+%        \item \textit{Model Based Search}
+%        \item GPUs, FPGAs, \textit{cloud}
+%        \item Julia Language
+%        \item Colaboração! (\alert{phrb@ime.usp.br})
+%    \end{itemize}
+%\end{frame}
 
 \subsection{Roteiro}
 
