@@ -107,10 +107,8 @@
 %        \item \textit{Autotuning}
 %        \item \textit{Stochastic Local Search}
 %        \item \textit{Model Based Search}
-%            \pause
 %        \item GPUs, FPGAs, \textit{cloud}
 %        \item Julia Language
-%            \pause
 %        \item Colaboração! (\alert{phrb@ime.usp.br})
 %    \end{itemize}
 %\end{frame}
@@ -154,14 +152,10 @@
 
     Uso de \alert{dispositivos} (\textit{devices}) para acelerar computações
     aplicadas a grandes conjuntos de dados:
-    \pause
     \begin{itemize}
         \item Associação a um processador \alert{hospedeiro} (\textit{host})
-            \pause
         \item \alert{Controle} e \alert{memória} próprios
-            \pause
         \item Diferem em \alert{especialização} e \alert{configurabilidade}
-            \pause
         \item \alert{GPUs}, DSPs, FPGAs, ASICs
     \end{itemize}
 \end{frame}
@@ -206,7 +200,6 @@
         \includegraphics[width=.83\textwidth]{titan}
     \end{center}
 
-    \pause
 
     Dados recursos computacionais \alert{heterogêneos}, conjuntos de
     \alert{dados} e \alert{computações}, como distribuir computações e dados de
@@ -221,16 +214,11 @@
 \begin{frame}
     \frametitle{Computação Heterogênea}
     Recursos computacionais \alert{heterogêneos}:
-    \pause
     \begin{itemize}
         \item Baixa latência: CPUs
-            \pause
         \item Alta vazão: GPUs
-            \pause
         \item Reconfiguráveis: FPGAs
-            \pause
         \item Especializados: ASICs, DSPs
-            \pause
         \item Memória?
     \end{itemize}
 \end{frame}
@@ -243,7 +231,6 @@
         \item \textit{Data Streams}
         \item ...
     \end{itemize}
-    \pause
     Modelos de programação (\alert{computações}):
     \begin{itemize}
         \item \textit{MapReduce}
@@ -262,7 +249,6 @@
         executando em:
     \begin{itemize}
         \item Múltiplos \textit{cores} idênticos
-            \pause
         \item Novas versões do mesmo \textit{core}
     \end{itemize}
 \end{frame}
@@ -277,11 +263,8 @@
         executando em diferentes:
     \begin{itemize}
         \item \textit{Cores} ou \alert{aceleradores}
-            \pause
         \item Modelos de memória
-            \pause
         \item Modelos de paralelismo
-            \pause
         \item Conjuntos de instruções
     \end{itemize}
 \end{frame}
@@ -305,21 +288,15 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{gtx1080}
     \end{center}
-    \pause
 
     Originalmente especializadas em \alert{processamento gráfico},
     trabalham com muitos dados e têm \alert{alta vazão}:
-    \pause
 
     \begin{itemize}
         \item Caches pequenos (\textit{kilobytes})
-            \pause
         \item Sem \alert{branch prediction}
-            \pause
         \item \alert{Milhares} de ALUs de \alert{maior latência}
-            \pause
         \item \alert{Pipelines} de execução
-            \pause
         \item 114 688 \alert{threads} concorrentes na arquitetura Pascal
     \end{itemize}
 \end{frame}
@@ -328,7 +305,6 @@
     \frametitle{Graphics Processing Units}
     Hoje são usadas em computação de propósito geral, podem ser chamadas de
     \textit{General Purpose GPUs} (GPGPUs):
-    \pause
     \begin{itemize}
         \item \textit{OpenGL}: 1992
         \item \textit{DirectX}: 1995
@@ -345,16 +321,12 @@
     Taxonomia de Flynn:
     \begin{itemize}
         \item \textit{Single Instruction Multiple Data} (SIMD)
-            \pause
         \item \textit{Single Instruction Multiple Thread} (SIMT)?
     \end{itemize}
-    \pause
     Escalonamento e execução:
     \begin{itemize}
         \item \textit{Streaming Multiprocessor} (SM)
-            \pause
         \item \textit{Warps}
-            \pause
         \item \textit{Grids, blocks} e \textit{threads}
     \end{itemize}
 \end{frame}
@@ -367,12 +339,10 @@
         \item \textit{Texture Processing Cluster} (TPC)
         \item \textit{Graphics Processing Cluster} (GPC)
     \end{itemize}
-    \pause
     Memória:
     \begin{itemize}
         \item Compartilhada: Cache L1, L2; \textit{megabytes} (Nvidia Pascal)
         \item Global: volátil, GDDR5; \textit{gigabytes}
-            \pause
         \item SSD: \alert{não-volátil}; \alert{\textit{terabytes}} (AMD SSG Fiji, 2017)
     \end{itemize}
     \vfill
@@ -386,11 +356,9 @@
     \frametitle{\textit{Compute Capability} e SIMT}
     A \alert{Compute Capability} especifica características de
     arquiteturas \textit{Single Instruction Multiple Thread} (SIMT):
-    \pause
     \begin{itemize}
         \item \textit{Warp}: Grupo de \textit{threads} executadas em \alert{paralelo}
         \item \textit{Streaming Multiprocessor} (SM): Cria, escalona e executa \textit{warps}
-            \pause
         \item Múltiplas \textit{warps} \alert{concorrentes} no mesmo SM
     \end{itemize}
     \vfill
@@ -403,21 +371,16 @@
 \begin{frame}
     \frametitle{\textit{Compute Capability} e SIMT}
     \textit{Warps}:
-    \pause
     \begin{itemize}
         \item Unidade de execução e escalonamento
         \item 32 \textit{threads}
-            \pause
         \item 1 \alert{instrução em comum} por vez
-            \pause
         \item \textit{Threads ativas}: estão no \textit{branch} atual de
             execução
         \item \textit{Threads inativas}: \alert{não} estão no \textit{branch}
             atual de execução
-            \pause
         \item \textit{Threads} fora do \textit{branch} atual executadas
             \alert{sequencialmente}
-            \pause
         \item Eficiência: sem divergência de execução dentro de \textit{Warps}
     \end{itemize}
     \vfill
@@ -481,7 +444,6 @@
     \begin{center}
         \includegraphics[width=.4\textwidth]{cuda-logo}
     \end{center}
-    \pause
 
     \begin{itemize}
         \item Plataforma para \alert{computação paralela}
@@ -505,13 +467,10 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{accel_apps_lib}
     \end{center}
-    \pause
 
     \begin{itemize}
         \item Fáceis de usar
-            \pause
         \item Aceleração \textit{Drop-in}
-            \pause
         \item Otimizadas por especialistas
     \end{itemize}
 \end{frame}
@@ -552,11 +511,9 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{accel_apps_comp}
     \end{center}
-    \pause
 
     \begin{itemize}
         \item Fáceis de usar
-            \pause
         \item Portáveis, mas desempenho depende do compilador
     \end{itemize}
 \end{frame}
@@ -585,11 +542,9 @@
     \begin{center}
         \includegraphics[width=.6\textwidth]{accel_apps_lang}
     \end{center}
-    \pause
 
     \begin{itemize}
         \item Melhor desempenho, mas mais difíceis de usar
-            \pause
         \item Flexíveis
     \end{itemize}
 \end{frame}
@@ -614,16 +569,11 @@
         \includegraphics[width=.3\textwidth]{cuda-c}
     \end{center}
 
-    \pause
     Modelo de Programação:
-    \pause
     \begin{itemize}
         \item \alert{Kernels}
-            \pause
         \item Hierarquia de \alert{Threads}
-            \pause
         \item Hierarquia de \alert{Memória}
-            \pause
         \item Programação \alert{Heterogênea}
     \end{itemize}
 \end{frame}
@@ -636,9 +586,7 @@
     \begin{itemize}
         \item \alert{Kernels} são funções C executadas por \alert{threads}
         \item $N$ \textit{threads} executam $N$ \textit{kernels}
-            \pause
         \item Acessam \alert{ID} de suas \textit{threads} pela variável \alert{\texttt{threadIdx}}
-            \pause
         \item Definidos usando a palavra-chave \alert{\texttt{\_\_global\_\_}}
         \item Seu tipo deve ser \alert{\texttt{void}}
     \end{itemize}
@@ -658,13 +606,10 @@
             \begin{itemize}
                 \item \texttt{kernel\_name\alert{<<<}...\alert{>>>}(...);}
             \end{itemize}
-            \pause
         \item Idealmente, são executados em \alert{paralelo}
-            \pause
         \item Na prática, o paralelismo depende:
             \begin{itemize}
                 \item Número de \textit{threads} em relação a uma \textit{warp}
-                    \pause
                 \item Coerência entre ramos de execução
             \end{itemize}
     \end{itemize}
@@ -709,11 +654,8 @@
     \alert{Thread Block}:
     \begin{itemize}
         \item Agrupamentos de \textit{Threads}
-            \pause
         \item \alert{Tridimensionais}: \texttt{\footnotesize{Db = (Dx, Dy, Dz)}}
-            \pause
         \item Tamanho \alert{máximo} de $1024$ \textit{threads}
-            \pause
         \item Um \alert{Grid} é um agrupamento tridimensional de \textit{blocks}
     \end{itemize}
 
@@ -804,12 +746,10 @@
 \begin{lstlisting}
 Dg.x * Dg.y * Dg.z = numBlocks
 \end{lstlisting}
-        \pause
         \item \texttt{\alert{dim3} Db} determina dimensão e tamanho de cada \textit{block}:
 \begin{lstlisting}
 Db.x * Db.y * Db.z = threadsPerBlock
 \end{lstlisting}
-        \pause
         \item \texttt{\alert{size\_t} Ns = 0}: \textit{Bytes} extras na memória compartilhada
         \item \texttt{\alert{cudaStream\_t} S = 0}: CUDA \textit{stream}
     \end{itemize}
@@ -829,11 +769,8 @@ Db.x * Db.y * Db.z = threadsPerBlock
     um \textit{kernel}:
     \begin{itemize}
         \item Local
-            \pause
         \item Compartilhada com o \textit{block}
-            \pause
-        \item Global\pause: persistente entre \textit{kernels} da \alert{mesma aplicação}
-            \pause
+        \item Global: persistente entre \textit{kernels} da \alert{mesma aplicação}
         \item \textit{Read-only}
     \end{itemize}
     \vfill
@@ -864,13 +801,10 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \begin{itemize}
         \item Alocar memória e recursos do \alert{device}
         \item Mover \alert{dados} (\alert{gargalo!})
-            \pause
         \item Lançar \textit{kernel}
-            \pause
         \item Mover \alert{resultados} (\alert{gargalo!})
         \item Liberar memória do \alert{device}
     \end{itemize}
-    \pause
     Tarefas do \alert{device}:
     \begin{itemize}
         \item Executar \textit{kernel}
@@ -979,11 +913,9 @@ Db.x * Db.y * Db.z = threadsPerBlock
     disponíveis em \url{github.com/phrb/intro-cuda}:
     \begin{itemize}
         \item \url{src/cuda-samples/0_Simple/vectorAdd}
-            \pause
         \item \url{src/cuda-samples/5_Simulations/fluidsGL}
         \item \url{src/cuda-samples/5_Simulations/oceanFFT}
         \item \url{src/cuda-samples/5_Simulations/smokeParticles}
-            \pause
         \item \url{src/mandelbrot_numba}
     \end{itemize}
 \end{frame}
@@ -1092,96 +1024,96 @@ Db.x * Db.y * Db.z = threadsPerBlock
 
 \subsection{Relembrando}
 
-\begin{frame}
-    \frametitle{Aceleração por \textit{Hardware}}
-    \begin{center}
-        \includegraphics[width=.6\textwidth]{accelerate}
-    \end{center}
-
-    Uso de \alert{dispositivos} (devices) para acelerar computações aplicadas a
-    grandes conjuntos de dados:
-
-    \begin{itemize}
-        \item Associação a um processador \alert{hospedeiro} (host)
-        \item Controle e memória próprios
-        \item Diferem em especialização e configurabilidade
-        \item \alert{GPUs}, DSPs, FPGAs, ASICs
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Aceleração por \textit{Hardware}}
-    \centering
-    \includegraphics[width=.8\textwidth]{accel}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Aceleração por \textit{Hardware}}
-    Porcentagem de sistemas com aceleradores na \textit{Top500}:
-
-    \begin{center}
-    \includegraphics[width=.95\textwidth]{top500_accel}
-    \hfill
-
-        \tiny{Imagem: \url{top500.org/lists/2016/06/download/TOP500_201606_Poster.pdf} [Acessado em 29/07/16]}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Computação Heterogênea}
-    \begin{center}
-        \includegraphics[width=.7\textwidth]{titan}
-    \end{center}
-
-    Dados recursos computacionais \alert{heterogêneos}, conjuntos de
-    \alert{dados} e \alert{computações}, como distribuir computações e dados de
-    forma a \alert{otimizar o uso} dos recursos?
-    \hfill
-
-    \begin{center}
-    \tiny{Imagem: \url{olcf.ornl.gov/titan} [Acessado em 29/07/16]}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Graphics Processing Units}
-    \begin{center}
-        \includegraphics[width=.6\textwidth]{gtx1080}
-    \end{center}
-
-    Originalmente especializadas em \alert{processamento gráfico},
-    trabalham com muitos dados e têm \alert{alta vazão}:
-    \begin{itemize}
-        \item Caches pequenos (\textit{kilobytes})
-        \item Sem \alert{branch prediction}
-        \item \alert{Milhares} de ALUs de \alert{maior latência}
-        \item \alert{Pipelines} de execução
-        \item 114 688 \alert{threads} concorrentes na arquitetura Pascal
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Plataforma CUDA}
-    \begin{center}
-        \includegraphics[width=.4\textwidth]{cuda-logo}
-    \end{center}
-    \begin{itemize}
-        \item Plataforma para \alert{computação paralela}
-        \item \textit{Application Programming Interface} (API)
-        \item CUDA \textit{Toolkit}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Linguagens de Programação}
-    \begin{center}
-        \includegraphics[width=.6\textwidth]{accel_apps_lang}
-    \end{center}
-    \begin{itemize}
-        \item Melhor desempenho, mas mais difíceis de usar
-        \item Flexíveis
-    \end{itemize}
-\end{frame}
+%\begin{frame}
+%    \frametitle{Aceleração por \textit{Hardware}}
+%    \begin{center}
+%        \includegraphics[width=.6\textwidth]{accelerate}
+%    \end{center}
+%
+%    Uso de \alert{dispositivos} (devices) para acelerar computações aplicadas a
+%    grandes conjuntos de dados:
+%
+%    \begin{itemize}
+%        \item Associação a um processador \alert{hospedeiro} (host)
+%        \item Controle e memória próprios
+%        \item Diferem em especialização e configurabilidade
+%        \item \alert{GPUs}, DSPs, FPGAs, ASICs
+%    \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Aceleração por \textit{Hardware}}
+%    \centering
+%    \includegraphics[width=.8\textwidth]{accel}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Aceleração por \textit{Hardware}}
+%    Porcentagem de sistemas com aceleradores na \textit{Top500}:
+%
+%    \begin{center}
+%    \includegraphics[width=.95\textwidth]{top500_accel}
+%    \hfill
+%
+%        \tiny{Imagem: \url{top500.org/lists/2016/06/download/TOP500_201606_Poster.pdf} [Acessado em 29/07/16]}
+%    \end{center}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Computação Heterogênea}
+%    \begin{center}
+%        \includegraphics[width=.7\textwidth]{titan}
+%    \end{center}
+%
+%    Dados recursos computacionais \alert{heterogêneos}, conjuntos de
+%    \alert{dados} e \alert{computações}, como distribuir computações e dados de
+%    forma a \alert{otimizar o uso} dos recursos?
+%    \hfill
+%
+%    \begin{center}
+%    \tiny{Imagem: \url{olcf.ornl.gov/titan} [Acessado em 29/07/16]}
+%    \end{center}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Graphics Processing Units}
+%    \begin{center}
+%        \includegraphics[width=.6\textwidth]{gtx1080}
+%    \end{center}
+%
+%    Originalmente especializadas em \alert{processamento gráfico},
+%    trabalham com muitos dados e têm \alert{alta vazão}:
+%    \begin{itemize}
+%        \item Caches pequenos (\textit{kilobytes})
+%        \item Sem \alert{branch prediction}
+%        \item \alert{Milhares} de ALUs de \alert{maior latência}
+%        \item \alert{Pipelines} de execução
+%        \item 114 688 \alert{threads} concorrentes na arquitetura Pascal
+%    \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Plataforma CUDA}
+%    \begin{center}
+%        \includegraphics[width=.4\textwidth]{cuda-logo}
+%    \end{center}
+%    \begin{itemize}
+%        \item Plataforma para \alert{computação paralela}
+%        \item \textit{Application Programming Interface} (API)
+%        \item CUDA \textit{Toolkit}
+%    \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Linguagens de Programação}
+%    \begin{center}
+%        \includegraphics[width=.6\textwidth]{accel_apps_lang}
+%    \end{center}
+%    \begin{itemize}
+%        \item Melhor desempenho, mas mais difíceis de usar
+%        \item Flexíveis
+%    \end{itemize}
+%\end{frame}
 
 \begin{frame}
     \frametitle{CUDA C}
@@ -1267,6 +1199,59 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \end{center}
 \end{frame}
 
+\section{Introdução a OpenCL}
+
+\begin{frame}
+    \frametitle{Introdução a OpenCL}
+    \begin{center}
+        \includegraphics[width=.24\textwidth]{opencl_logo}
+    \end{center}
+    OpenCL é um \alert{framework} para programação \alert{paralela} e
+    \alert{heterogênea}:
+    \begin{itemize}
+        \item Padrão \alert{aberto}
+        \item Mantido pelo \alert{Khronos Group}
+        \item Implementado por \alert{diferentes empresas}
+        \item CPUs, \alert{GPUs}, DSPs, FPGAs, $\dots$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modelo de Programação OpenCL}
+    \begin{center}
+        \includegraphics[width=.24\textwidth]{opencl_logo}
+    \end{center}
+    Modelo de programação:
+    \begin{itemize}
+        \item \alert{Compute devices}
+        \item \alert{Kernels}
+        \item Extensões de \alert{C/C++}
+        \item \alert{API}
+        \item Kernels compilados em \alert{tempo de execução}
+        \item \alert{Hierarquia de memória}
+    \end{itemize}
+\end{frame}
+
+\subsection{Fluxo de um Programa OpenCL}
+
+\begin{frame}
+    \frametitle{Fluxo de um Programa OpenCL}
+    \begin{center}
+        \includegraphics[width=.95\textwidth]{opencl_program_flow}
+    \end{center}
+\end{frame}
+
+\subsection{Exemplo}
+
+\begin{frame}
+    \frametitle{Mão na massa!}
+    Vamos executar um exemplo em OpenCL,
+    disponível em \url{github.com/phrb/intro-cuda}:
+    \begin{itemize}
+        \item \url{src/opencl}
+    \end{itemize}
+\end{frame}
+
 \section{Compilação de Aplicações CUDA}
 
 \subsection{Nvidia CUDA Compiler}
@@ -1276,14 +1261,10 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \begin{center}
         \includegraphics[width=.55\textwidth]{compiler}
     \end{center}
-    \pause
     \begin{itemize}
         \item Sistema \alert{proprietário}
-            \pause
         \item Usa o compilador C++ do \textit{host}
-            \pause
         \item Compila código CUDA para \textit{Parallel Thread Execution} (\alert{PTX} ISA)
-            \pause
         \item Código do \textit{host} + Código do \textit{device} $\rightarrow$ \alert{fatbinary}
     \end{itemize}
 \end{frame}
@@ -1295,7 +1276,6 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \begin{itemize}
         \item SIMD, SIMT
         \item \textit{Single Program Multiple Data} (SPMD)
-            \pause
         \item \textit{Device}: \alert{threads} paralelas e \alert{independentes}
         \item \textit{Host}: não interfere
     \end{itemize}
@@ -1338,17 +1318,13 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \end{center}
     \vfill
 
-    \pause
     Dado um \alert{programa sequencial}:
     \begin{itemize}
         \item Quais funções fazem o \alert{trabalho pesado} (\alert{gargalos})?
-            \pause
         \item É possível \alert{paralelizá-las}?
-            \pause
         \item Como o programa se comporta quando:
             \begin{itemize}
                 \item O trabalho é divido entre mais processos? (\alert{strong scaling})
-                    \pause
                 \item Há mais trabalho a ser feito? (\alert{weak scaling})
             \end{itemize}
     \end{itemize}
@@ -1361,7 +1337,6 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \begin{center}
     \includegraphics[width=.4\textwidth]{MPOD_P}
     \vfill
-        \pause
     \includegraphics[width=.6\textwidth]{accel_apps}
     \end{center}
 \end{frame}
@@ -1385,19 +1360,15 @@ Db.x * Db.y * Db.z = threadsPerBlock
 
     \vfill
 
-    \pause
     Otimização:
     \begin{itemize}
-        \item Processo \alert{cíclico} \pause e \alert{incremental}
-            \pause
+        \item Processo \alert{cíclico} e \alert{incremental}
         \item Aplicável a \alert{diferentes níveis}
-            \pause
         \item \alert{Ferramentas} são muito importantes
     \end{itemize}
 
-    \pause
     \begin{center}
-    \alert{Eficiência com algoritmos}, \pause \alert{desempenho com estruturas de dados}
+    \alert{Eficiência com algoritmos}, \alert{desempenho com estruturas de dados}
     \end{center}
 \end{frame}
 
@@ -1411,12 +1382,9 @@ Db.x * Db.y * Db.z = threadsPerBlock
 
     \vfill
 
-    \pause
     \begin{itemize}
         \item Preparar a aplicação para a \alert{medição}
-            \pause
         \item Otimizações e mudanças \alert{incrementais}
-            \pause
         \item O quanto ainda é \alert{possível} otimizar?
     \end{itemize}
 \end{frame}
@@ -1431,21 +1399,15 @@ Db.x * Db.y * Db.z = threadsPerBlock
 
     Computação \alert{paralela} e \alert{distribuída} é cada vez mais
     importante, mas \alert{código legado}:
-    \pause
     \begin{itemize}
         \item \alert{Sequencial}
-            \pause
         \item Paralelismo de \alert{baixa granularidade}
     \end{itemize}
-    \pause
 
     Análise ou \alert{profiling}:
-    \pause
     \begin{itemize}
         \item Quais são os \alert{hotspots} (\textit{gargalos}, \textit{bottlenecks})?
-            \pause
         \item Podem ser paralelizados?
-            \pause
         \item Quais \alert{workloads} são relevantes?
     \end{itemize}
 \end{frame}
@@ -1457,19 +1419,14 @@ Db.x * Db.y * Db.z = threadsPerBlock
     Diferenças entre \textit{host} e \textit{device}:
     \begin{itemize}
         \item Modelo de \textit{threading}
-            \pause
         \item Memória
     \end{itemize}
 
-    \pause
     O que executar em \alert{GPUs}?
-    \pause
     \begin{itemize}
         \item Grande quantidade de \alert{dados}
-            \pause
         \item Operações \alert{independentes}
     \end{itemize}
-    \pause
 
     Qual o impacto das \alert{transferências de dados}?
 \end{frame}
@@ -1480,14 +1437,11 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \frametitle{\textit{Profiling}}
     Monitoramento de código \alert{em tempo de execução},
     obtendo informação para \alert{otimizar o código}
-    \pause
 
     \alert{Instrumentação} do Código:
     \begin{itemize}
         \item Captura de \alert{eventos}
-            \pause
         \item Geração de \alert{dados}
-            \pause
         \item Ferramentas
     \end{itemize}
 \end{frame}
@@ -1501,9 +1455,7 @@ Db.x * Db.y * Db.z = threadsPerBlock
     Facilitam a análise de:
     \begin{itemize}
         \item \textit{Bottlenecks}, \textit{hotspots}, ou \textit{gargalos} de desempenho
-            \pause
         \item Frequência e duração de \alert{chamadas de função}: \textit{On-CPU}
-            \pause
         \item Tempo \alert{ocioso} (\textit{espera}): \textit{Off-CPU}
     \end{itemize}
 \end{frame}
@@ -1512,17 +1464,12 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \frametitle{Profiling: \texttt{nvprof}}
     \textit{Profiler} de \alert{linha de comando},
     permite a coleta de eventos relacionados a CUDA:
-    \pause
     \begin{itemize}
         \item CPU e GPU
-            \pause
         \item Execução do \textit{kernel}
-            \pause
         \item Uso e transferência de memória
-            \pause
         \item CUDA API
     \end{itemize}
-    \pause
 
     Gera dados para \alert{posterior visualização}
 
@@ -1555,26 +1502,19 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \frametitle{\textit{Debugging}}
     Monitoramento de código \alert{em tempo de execução},
     obtendo informação para \alert{consertar erros} (\alert{bugs})
-    \pause
 
     \alert{Instrumentação} do Código:
     \begin{itemize}
         \item Execução \alert{passo-a-passo}
-            \pause
         \item \alert{Breakpoints}
-            \pause
         \item Diferentes \alert{threads}
-            \pause
         \item CUDA \texttt{\alert{gdb}} e \texttt{\alert{memcheck}}
     \end{itemize}
-    \pause
 
     Facilitam a solução de:
     \begin{itemize}
         \item \alert{Vazamentos} de memória
-            \pause
         \item Problemas com \alert{fluxo de controle}
-            \pause
         \item ...
     \end{itemize}
 \end{frame}
@@ -1588,14 +1528,10 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \end{center}
 
     Diferentes níveis de \alert{abstração} e \alert{prioridade}:
-    \pause
     \begin{itemize}
         \item Memória
-            \pause
         \item Fluxo de controle
-            \pause
         \item Configuração de execução
-            \pause
         \item Instruções
     \end{itemize}
 \end{frame}
@@ -1605,35 +1541,25 @@ Db.x * Db.y * Db.z = threadsPerBlock
 \begin{frame}
     \frametitle{Otimizações de Memória}
     São as \alert{mais importantes} para atingir \alert{alto desempenho}
-    \pause
 
     Objetivos:
     \begin{itemize}
         \item Maximizar \alert{largura de banda} (\textit{bandwidth})
-            \pause
         \item Minimizar \alert{transferências} entre \textit{device} e \textit{host}
-            \pause
     \end{itemize}
 
     Boas práticas:
-    \pause
 
     \begin{itemize}
         \item No \textit{device}:
-            \pause
             \begin{itemize}
                 \item Priorizar execução de \alert{computações}
-                    \pause
                 \item Criar e destruir \alert{estruturas de dados intermediárias}
-                    \pause
                 \item Accesos \alert{agrupados} (\textit{coalescentes}) à memória
             \end{itemize}
-            \pause
         \item No \textit{host}:
-            \pause
             \begin{itemize}
                 \item Delegar execução de \alert{computações}
-                    \pause
                 \item Minimizar o número de \alert{transferências de dados}
             \end{itemize}
     \end{itemize}
@@ -1644,16 +1570,13 @@ Db.x * Db.y * Db.z = threadsPerBlock
 \begin{frame}
     \frametitle{Otimizações de Fluxo de Controle}
     \alert{Alta prioridade} para atingir \alert{alto desempenho}
-    \pause
 
     Objetivos:
     \begin{itemize}
         \item Evitar \alert{divergência de fluxo de controle} dentro de
             \textit{warps}
-            \pause
         \item \texttt{\alert{if}}, \texttt{\alert{switch}},
             \texttt{\alert{do}}, \texttt{\alert{for}}, \texttt{\alert{while}}
-            \pause
         \item Fazer bom uso do \texttt{\alert{threadIdx}}
     \end{itemize}
 \end{frame}
@@ -1663,12 +1586,9 @@ Db.x * Db.y * Db.z = threadsPerBlock
 \begin{frame}
     \frametitle{Otimizações de Configuração de Execução}
     Como aproveitar totalmente o potencial do \alert{device}?
-    \pause
     \begin{itemize}
         \item Maximizar a \alert{ocupância}
-            \pause
         \item Escolher bem os \alert{blocks} e \alert{threads}
-            \pause
         \item Execução independente de \alert{kernels}
     \end{itemize}
 \end{frame}
@@ -1678,15 +1598,11 @@ Db.x * Db.y * Db.z = threadsPerBlock
 \begin{frame}
     \frametitle{Otimizações de Instruções}
     \alert{Baixa prioridade} para atingir \alert{alto desempenho}:
-    \pause
     \begin{itemize}
         \item \alert{Baixo nível}
-            \pause
         \item Aplicadas a \alert{hotspots}
-            \pause
         \item Feitas por \alert{experts}
         \item Após \alert{exaurir} outras possibilidades de otimização
-            \pause
         \item \lq\lq{}\alert{Escovar \textit{bits}}\rq\rq{} \smiley{}
     \end{itemize}
 \end{frame}
@@ -1699,7 +1615,7 @@ Db.x * Db.y * Db.z = threadsPerBlock
         \includegraphics[width=.75\textwidth]{top500_accel}
     \vfill
 
-    Atingir \alert{alto desempenho} através do uso de \alert{aceleradores} \pause (\alert{GPUs})
+    Atingir \alert{alto desempenho} através do uso de \alert{aceleradores} (\alert{GPUs})
 \end{frame}
 
 \begin{frame}
@@ -1709,10 +1625,8 @@ Db.x * Db.y * Db.z = threadsPerBlock
     \end{center}
     \vfill
 
-    \pause
     Custo de \alert{implementação}, \alert{análise} e \alert{otimização}
 
-    \pause
     \alert{Ferramentas} da plataforma \alert{CUDA}
 \end{frame}
 
